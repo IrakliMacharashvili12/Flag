@@ -1,0 +1,83 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --red: #B41240;
+    --white: #FFFFFF;
+    --blue: #032D61;
+  }
+  
+  .container {
+    display: grid;
+    width: 100%;
+    min-height: 100dvh;
+    place-content: center;
+    background-image: linear-gradient(
+      0deg,
+      hsl(120, 65%, 30%) 0%,
+      hsl(55, 62%, 45%) 58%,
+      hsl(202, 65%, 75%) 59%,
+      hsl(240, 70%, 40%)
+    )
+  }
+  
+  .flag {
+    --flag-width: 80dvw;
+    --flag-height: calc(var(--flag-width) * 1010 / 1920);
+    position: relative;
+    width: var(--flag-width);
+    height: var(--flag-height);
+  }
+  
+  .bars {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      180deg,
+      var(--red) 0%,
+      var(--red) 50%,
+      var(--white) 50%,
+      var(--white) 100%
+    );
+    background-size: 100% calc(101% * 2 / 13);
+    background-repeat: repeat-y;
+  }
+  
+  .stars {
+    --stars-height: calc(100% * 7 / 13);
+    position: absolute;
+    height: var(--stars-height);
+    width: calc(var(--stars-height) * 545 / 768);
+    top: 0px;
+    left: 0px;
+    background-color: var(--blue);
+  }
+  
+  .stars .row {
+    height: 11.5%;
+    margin-top: -1.25%;
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 51 48'%3E%3Ctitle%3EFive Pointed Star%3C/title%3E%3Cpath fill='%23FFF' stroke='none' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+  }
+  
+  .stars .row-6 {
+    width: 94%;
+    margin-left: 1.5%;
+    background-size: 17% 87%;
+  }
+  
+  .stars .row-6:first-of-type {
+    margin-top: 4%;
+  }
+  
+  .stars .row-5 {
+    width: 78%;
+    background-size: 21% 87%;
+    margin-left: 8%;
+  }
